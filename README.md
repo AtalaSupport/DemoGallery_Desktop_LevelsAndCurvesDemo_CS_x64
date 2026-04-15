@@ -1,28 +1,10 @@
 # Levels and Curves Demo
 
-
-This is a simple Windows Forms application that highlights our Jp2Decoder and using it to view files in our WorkspaceViewer.
-
-This demo was formerly called Jp2Viewer.
-
-This is the C# version. We also have a [VB.NET version](https://github.com/AtalaSupport/DemoGallery_Desktop_Jpeg2000ViewerDemo_VB_x64)
+Demonstrates how DotImage's Levels and Curves commands will work on an a photographic image as well as a demonstration of AutoLevels.
 
 
 ## Licensing
-This application as configured, requires a license for DotImage Document Imaging. Optionally the WinDemoHelperMethods class will include additional codecs such as PDF 
-
-If you want to enable certain advanced Jp2Decoder features such as Pgorgressive Decompression, you'll need to license for Jpeg2000 and also uncomment the 2 relevant lines (included here for context) 
-
-```csharp
-InitializeComponent();
-_jp2 = new Jp2Decoder();
-//// NOTE you need a license for the Jpeg2000 Professional version for the progressive features
-//_jp2.EnableProgressiveDecompression = true; 
-//_jp2.ProgressiveImage += new ProgressiveImageEventHandler(jp2_ProgressiveImage); 
-```
-
-> **NOTE**
-> In theory, you could use DotImage Photo or DotImage Photo Pro with the Jpeg2000 addon license. However, DotImage Document Imaging has included the Jpeg2000 (as well as Jbig2, DICOM, DWG and Forms Processing) for several years. If you're unsure of what you need, please [contact our sales team](mailto:sales@atalasoft.com).  
+This application as configured, requires a license for DotImage Photo Pro or  DotImage Document Imaging. Optionally the WinDemoHelperMethods class will include additional codecs such as PDF. PDF support will automaticlly enable if you have a license for our PdfReader addon.
 
 
 ## SDK Dependencies
@@ -35,23 +17,41 @@ We do publish our SDK components to NuGet. We have chosen to base the demo on lo
 Still, if you wish to use NuGet for the dependencies instead of relying on locally installed SDK, you can.
 
 - Take note of each of the references we've included:
+    - Atalasoft.DotImage.AdvancedDocClean.dll
     - Atalasoft.DotImage.dll
-    - Atalasoft.DotImage.Lib.dll
+    - Atalasoft.DotImage.Dicom.dll
+    - Atalasoft.DotImage.Dwg.dll
+    - Atalasoft.DotImage.Heif.dll
+    - Atalasoft.DotImage.Jbig2.dll
     - Atalasoft.DotImage.Jpeg2000.dll
+    - Atalasoft.DotImage.Lib.dll
+    - Atalasoft.DotImage.Pdf.dll
+    - Atalasoft.DotImage.PdfDoc.Bridge.dll
+    - Atalasoft.DotImage.PdfReader.dll
+    - Atalasoft.DotImage.Raw.dll
+    - Atalasoft.DotImage.WinControls.dll
+    - Atalasoft.PdfDoc.dll
     - Atalasoft.Shared.dll
 - Remove those referneces
 - Open the NuGet Package Manger from `Tools -> NuGet Package Manager -> Manage NuGet Packages for this Solution`
-- Browse for Atalasoft.DotImage.x64
-- Install this package, and it will pull in DotImage Document Imaging (the base SDK)
-- Browse for Atalasoft.DotImage.Jpeg2000.x64
-- Install this package, and it will pull in the Jpeg2000 component
+- Browse for and install Atalasoft.DotImage.WinControls.x64
+    - This will install DotImage, DotImage.Lib, PdfReader, PdfDoc, and our shared dll
+- Browse for and install Atalasoft.DotImage.Dicom.x64
+- Browse for and install Atalasoft.DotImage.Dwg.x64
+- Browse for and install Atalasoft.DotImage.Heif.x64
+- Browse for and install Atalasoft.DotImage.Jbig2.x64
+- Browse for and install Atalasoft.DotImage.Jpeg2000.x64
+- Browse for and install Atalasoft.DotImage.Pdf.x64
+    - This will add pdf Encoder as well as AdvancedDocClean
 
 ## Cloning
 We recommend the following to ensure you clone with the required submodule
 
 Example: git for windows
 ```bash
-git clone https://github.com/AtalaSupport/DemoGallery_Desktop_Jpeg2000ViewerDemo_CS_x64.git DotPdfInvoiceTemplateDemo
+git clone https://github.com/AtalaSupport/DemoGallery_Desktop_LevelsAndCurvesDemo_CS_x64.git LevelsAndCurvesDemo
+git submodule init
+git submodule update
 ```
 
 If you've got DotImage 2026.2 installed and licensed, it should just build and run.  
