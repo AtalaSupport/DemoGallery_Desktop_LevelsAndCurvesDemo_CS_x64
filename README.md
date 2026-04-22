@@ -44,6 +44,10 @@ Still, if you wish to use NuGet for the dependencies instead of relying on local
 - Browse for and install Atalasoft.DotImage.Pdf.x64
     - This will add pdf Encoder as well as AdvancedDocClean
 
+## Downloading source
+The sources can be downloaded for [c#](https://github.com/AtalaSupport/DemoGallery_Desktop_LevelsAndCurvesDemo_CS_x64/archive/refs/heads/main.zip) and [VB.NET](https://github.com/AtalaSupport/DemoGallery_Desktop_LevelsAndCurvesDemo_VB_x64/archive/refs/heads/main.zip)
+
+
 ## Cloning
 We recommend the following to ensure you clone with the required submodule
 
